@@ -1,0 +1,33 @@
+[package]
+name = "floor_hook"
+version = "0.1.0"
+description = "FLOOR on Solana: the ratchet-floor mechanism as an approved carpenter_amm hook"
+edition = "2021"
+license = "UNLICENSED"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "floor_hook"
+
+[features]
+default = ["custom-heap"]
+custom-heap = []
+heap-trace = []
+heap-no-reuse = []
+cu-profile = ["dep:solana-define-syscall"]
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "=1.2.0", features = ["event-cpi"] }
+anchor-spl = { version = "=1.2.0", default-features = false, features = ["token", "token_2022", "token_2022_extensions", "associated_token"] }
+bytemuck = { version = "1", features = ["derive", "min_const_generics"] }
+floor-types = { path = "../../crates/floor-types" }
+solana-define-syscall = { version = "=3.0.0", optional = true }
+carpenter-clmm-math = { path = "../../crates/carpenter-clmm-math" }
+floor-math = { path = "../../crates/floor-math" }
+carpenter-mint-gate = { path = "../../crates/carpenter-mint-gate" }

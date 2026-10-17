@@ -1,0 +1,27 @@
+[package]
+name = "floor_holders"
+version = "0.1.0"
+description = "FLOOR on Solana: the keyless holder-rewards tally, a Token-2022 transfer hook on hooked launches"
+edition = "2021"
+license = "UNLICENSED"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "floor_holders"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "=1.2.0", features = ["event-cpi"] }
+anchor-spl = { version = "=1.2.0", default-features = false, features = ["token", "token_2022", "token_2022_extensions", "associated_token"] }
+bytemuck = { version = "1", features = ["derive", "min_const_generics"] }
+floor-types = { path = "../../crates/floor-types" }
+floor-math = { path = "../../crates/floor-math" }
+solana-curve25519 = "=3.1.14"

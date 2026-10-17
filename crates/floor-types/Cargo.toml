@@ -1,0 +1,12 @@
+[package]
+name = "floor-types"
+version = "0.1.0"
+edition = "2021"
+description = "FLOOR on Solana: the mechanism's interface types, account layouts, seeds and constants, over carpenter-types (the AMM and the hook interface). No Solana dependency (D-30)."
+license = "UNLICENSED"
+publish = false
+
+[dependencies]
+carpenter-types = { path = "../carpenter-types" }
+borsh = { version = "1.5.7", features = ["derive"] }
+bytemuck = { version = "1", features = ["derive", "min_const_generics"] }

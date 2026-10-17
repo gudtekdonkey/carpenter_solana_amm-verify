@@ -1,0 +1,14 @@
+[package]
+name = "floor-math"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false
+description = "FLOOR's mechanism math (skim ramp, fees, positions, floor solve, modes, sale) for the Solana C1 build; no Solana dependency"
+
+[lib]
+doctest = false
+
+[dependencies]
+carpenter-clmm-math = { path = "../carpenter-clmm-math" }
+bytemuck = { version = "=1.25.2", default-features = false }

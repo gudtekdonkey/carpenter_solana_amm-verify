@@ -1,0 +1,17 @@
+[package]
+name = "carpenter-clmm-math"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0 AND MIT"
+publish = false
+description = "Q64.64 concentrated-liquidity math for FLOOR's v4-shaped Solana AMM, adapted from Raydium CLMM ed7c84a5 (Apache-2.0)"
+
+[lib]
+doctest = false
+
+[dependencies]
+uint = "=0.9.5"
+
+[dev-dependencies]
+quickcheck = "=0.9.2"
+proptest = "=1.11.0"

@@ -1,0 +1,19 @@
+[package]
+name = "carpenter-quote"
+version = "0.1.0"
+edition = "2021"
+description = "FLOOR on Solana: the network-free quoter (spec §9 WP-Q, §10.1). Plain and FLOOR pools, from account bytes."
+license = "UNLICENSED"
+publish = false
+
+[lib]
+doctest = false
+
+[dependencies]
+floor-types = { path = "../floor-types" }
+carpenter-clmm-math = { path = "../carpenter-clmm-math" }
+floor-math = { path = "../floor-math" }
+bytemuck = { version = "1", features = ["derive", "min_const_generics"] }
+
+[dev-dependencies]
+serde_json = "1"

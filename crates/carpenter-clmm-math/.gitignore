@@ -1,0 +1,3 @@
+# Standalone until WP-0 adds the root workspace; its Cargo.lock then governs, and a member lock would be stale.
+/Cargo.lock
+/target

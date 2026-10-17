@@ -1,0 +1,11 @@
+[package]
+name = "carpenter-types"
+version = "0.1.0"
+edition = "2021"
+description = "Carpenter on Solana: the AMM's interface types, account layouts, seeds and constants, and the hook interface. No Solana dependency (D-30), no FLOOR."
+license = "UNLICENSED"
+publish = false
+
+[dependencies]
+borsh = { version = "1.5.7", features = ["derive"] }
+bytemuck = { version = "1", features = ["derive", "min_const_generics"] }
